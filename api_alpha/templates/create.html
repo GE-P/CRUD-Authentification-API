@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Ajoutez une nouvelle bouteille {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label>Nom</label>
+            <input type="text" name="title"
+                   placeholder="Nom du vin">
+        </p>
+
+        <p>
+            <label>Maison</label>
+            <input type="text" name="house"
+                   placeholder="Maison du vin">
+        </p>
+
+        <p>
+            <label>Prix</label>
+            <input type="number" name="price"
+                   placeholder="Prix de la bouteille">
+        </p>
+        <p>
+            <label>Review</label>
+            <br>
+            <textarea name="review"
+                  placeholder="Review"
+                  rows="15"
+                  cols="60"
+                  ></textarea>
+        </p>
+        <p>
+            <button type="submit" class="btn">Ajouter</button>
+        </p>
+    </form>
+{% endblock %}

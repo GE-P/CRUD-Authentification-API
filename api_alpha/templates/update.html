@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Modifiez une nouvelle bouteille {% endblock %}</h1>
+
+{% for vi in vins %}
+        <div class="container alert alert-warning">
+            <h3>#{{ vi[0] }} - {{ vi[1] }} OF {{ vi[2] }}</h3>
+            <i><p>({{ vi[3] }} price)</p></i>
+            <p class="container">{{ vi[4] }}</p>
+            <i><p>Added {{ vi[5] }}</p></i>
+        </div>
+    {% endfor %}
+
+<form method="post">
+    <p>
+        <label for="title">Nom</label>
+        <input type="text" name="title"
+               placeholder="-- Obligatoire">
+    </p>
+
+    <p>
+        <label for="house">Maison</label>
+        <input type="text" name="house"
+               placeholder="-- Obligatoire">
+    </p>
+
+    <p>
+        <label for="price">Prix</label>
+        <input type="number" name="price"
+               placeholder="-- Obligatoire">
+    </p>
+    <p>
+        <label for="review">Review</label>
+        <br>
+        <textarea name="review"
+                  placeholder="Review"
+                  rows="15"
+                  cols="60"
+        ></textarea>
+    </p>
+    <p>
+        <button type="submit" class="btn">Modifier</button>
+    </p>
+</form>
+{% endblock %}

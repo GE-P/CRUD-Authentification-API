@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        {% if session %}
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for('index') }}">API-alpha</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="{{ url_for('create') }}">Ajouter</a>
+            </li>
+        </ul>
+        {% endif %}
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a href="{{ url_for('auth.login') }}">login</a>
+            </li>
+        </ul>
+        {% if session %}
+        <ul class="nav navbar-nav">
+            <li class="nav-item">
+                <a href="{{ url_for('auth.logout') }}">logout</a>
+            </li>
+        </ul>
+        {% endif %}
+    </nav>
+    <hr>
+    <div class="container">
+        {% for message in get_flashed_messages() %}
+            <div class="alert alert-danger">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+
+</body>
+</html>

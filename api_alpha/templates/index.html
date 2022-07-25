@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Vins : {% endblock %}</h2>
+    {% for vins in vins %}
+        <div class="container">
+            <h4>#{{ vins[0] }} - {{ vins[1] }} OF {{ vins[2] }}</h4>
+            <i><p>({{ vins[3] }} price)</p></i>
+            <p class="container">{{ vins[4] }}</p>
+            <i><p>Added {{ vins[5] }}</p></i>
+            <td><a href='update/{{ vins[0] }}'>Edit</a></td>
+            <td><a href='delete/{{ vins[0] }}'>Supprimer</a></td>
+        </div>
+    {% endfor %}
+{% endblock %}
