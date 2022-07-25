@@ -1,6 +1,6 @@
 ![SCREEN](https://i.postimg.cc/k4cVbbRW/banniere.jpg)
 
-# || Branch: eibl_g || Project_ID : 963416 ||
+# Project
 - API_alpha
 
 # How to install ?
